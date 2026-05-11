@@ -11,6 +11,7 @@ const API_BASE =
   process.env.ZHIPU_API_BASE || "https://open.bigmodel.cn/api/coding/paas/v4";
 const FALLBACK_MODELS = [
   process.env.ZHIPU_MODEL || "glm-5-turbo",
+  "GLM-5-Turbo",
   "glm-4.7",
   "glm-4.7-flash",
 ];
@@ -160,6 +161,8 @@ ${papersText}
 
 請篩選出最重要的 TOP 5-8 篇論文放入 top_picks（按重要性排序），其餘放入 all_papers。
 每篇 paper 的 tags 請從以下選擇：${TAGS.join("、")}
+
+重要：每篇論文的 url 欄位必須直接複製原始文獻資料中的 url 欄位值（完整的 https://pubmed.ncbi.nlm.nih.gov/PMID/ 格式），不要自行構造或修改。
 記住：回傳純 JSON，不要用 \`\`\`json\`\`\` 包裹。`;
 
   const modelsToTry = [...new Set(FALLBACK_MODELS)];
