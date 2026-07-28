@@ -74,7 +74,7 @@ function main() {
   <p class="count">共 ${total} 期日報</p>
   <ul>${links}</ul>
   <footer>
-    <p>Powered by PubMed + Zhipu AI · <a href="https://github.com/u8901006/gaming-disorder">GitHub</a></p>
+    <p>Powered by PubMed + NVIDIA AI · <a href="https://github.com/u8901006/gaming-disorder">GitHub</a></p>
   </footer>
 </div>
 </body>
