@@ -64,11 +64,11 @@ jobs:
             echo "No papers found, will generate empty report"
           fi
 
-      - name: Generate report with Zhipu AI
+      - name: Generate report with NVIDIA AI
         env:
-          ZHIPU_API_KEY: ${{ secrets.ZHIPU_API_KEY }}
-          ZHIPU_API_BASE: "https://open.bigmodel.cn/api/coding/paas/v4"
-          ZHIPU_MODEL: "GLM-5-Turbo"
+          NVIDIA_API_KEY: ${{ secrets.NVIDIA_API_KEY }}
+          NVIDIA_API_BASE: "https://integrate.api.nvidia.com/v1"
+          NVIDIA_MODEL: "nvidia/nemotron-3-super-120b-a12b"
           INPUT_PATH: "papers.json"
           OUTPUT_PATH: "docs/gaming-${{ steps.date.outputs.target }}.html"
         run: node scripts/generate_report.mjs
