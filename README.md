@@ -9,7 +9,7 @@ https://u8901006.github.io/gaming-disorder/
 ## 運作方式
 
 1. 每天 GMT+8 08:20 自動從 PubMed 抓取最新遊戲障礙研究文獻
-2. 使用 Zhipu AI (GLM-5-Turbo) 進行繁體中文摘要、分類
+2. 使用 NVIDIA API (nvidia/nemotron-3-super-120b-a12b) 進行繁體中文摘要、分類
 3. 生成靜態 HTML 報告並部署至 GitHub Pages
 4. 自動追蹤已總結的文獻，避免重複報導
 
@@ -17,7 +17,7 @@ https://u8901006.github.io/gaming-disorder/
 
 - Node.js 24
 - PubMed E-utilities API
-- Zhipu AI GLM-5-Turbo (fallback: GLM-4.7 → GLM-4.7-Flash)
+- NVIDIA API (nvidia/nemotron-3-super-120b-a12b)
 - GitHub Actions + GitHub Pages
 
 ## 相關連結
