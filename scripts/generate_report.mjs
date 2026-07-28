@@ -8,12 +8,9 @@ const ROOT = resolve(__dirname, "..");
 const SUMMARIZED_PATH = resolve(ROOT, "docs", ".summarized_cache.json");
 
 const API_BASE =
-  process.env.ZHIPU_API_BASE || "https://open.bigmodel.cn/api/coding/paas/v4";
+  process.env.NVIDIA_API_BASE || "https://integrate.api.nvidia.com/v1";
 const FALLBACK_MODELS = [
-  process.env.ZHIPU_MODEL || "glm-5-turbo",
-  "GLM-5-Turbo",
-  "glm-4.7",
-  "glm-4.7-flash",
+  process.env.NVIDIA_MODEL || "nvidia/nemotron-3-super-120b-a12b",
 ];
 
 const SYSTEM_PROMPT = `你是遊戲障礙（Gaming Disorder）領域的資深研究員與科學傳播者。你的任務是：
@@ -91,7 +88,7 @@ function extractJson(text) {
   return null;
 }
 
-async function callZhipuAPI(apiKey, model, payload) {
+async function callNvidiaAPI(apiKey, model, payload) {
   const resp = await fetch(`${API_BASE}/chat/completions`, {
     method: "POST",
     headers: {
@@ -177,11 +174,12 @@ ${papersText}
             { role: "system", content: SYSTEM_PROMPT },
             { role: "user", content: prompt },
           ],
-          temperature: 0.3,
-          top_p: 0.9,
-          max_tokens: 50000,
+          temperature: 1.0,
+          top_p: 0.95,
+          max_tokens: 16384,
+          reasoning_effort: "none",
         };
-        const data = await callZhipuAPI(apiKey, model, payload);
+        const data = await callNvidiaAPI(apiKey, model, payload);
         const text = data.choices?.[0]?.message?.content?.trim() || "";
         const result = extractJson(text);
         if (result) {
@@ -378,7 +376,7 @@ function generateHtml(analysis) {
       <div class="header-meta">
         <span class="badge badge-date">📅 ${dateDisplay}</span>
         <span class="badge badge-count">📊 ${totalCount} 篇文獻</span>
-        <span class="badge badge-source">Powered by PubMed + Zhipu AI</span>
+        <span class="badge badge-source">Powered by PubMed + NVIDIA AI</span>
       </div>
     </div>
   </header>
@@ -448,10 +446,10 @@ function updateSummarizedCache(allPmids) {
 async function main() {
   const inputPath = process.env.INPUT_PATH || resolve(ROOT, "papers.json");
   const outputPath = process.env.OUTPUT_PATH || "";
-  const apiKey = process.env.ZHIPU_API_KEY || "";
+  const apiKey = process.env.NVIDIA_API_KEY || "";
 
   if (!apiKey) {
-    console.error("[ERROR] ZHIPU_API_KEY environment variable is required");
+    console.error("[ERROR] NVIDIA_API_KEY environment variable is required");
     process.exit(1);
   }
 
