@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Gaming Disorder Research &middot; 遊戲障礙研究文獻日報 &middot; 2026年7月30日</title>
+<meta name="description" content="2026年7月30日 遊戲障礙研究文獻日報，由 AI 自動彙整 PubMed 最新論文"/>
+<style>
+  :root { --bg: #f6f1e8; --surface: #fffaf2; --line: #d8c5ab; --text: #2b2118; --muted: #766453; --accent: #8c4f2b; --accent-soft: #ead2bf; --card-bg: color-mix(in srgb, var(--surface) 92%, white); }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: radial-gradient(circle at top, #fff6ea 0, var(--bg) 55%, #ead8c6 100%); color: var(--text); font-family: "Noto Sans TC", "PingFang TC", "Helvetica Neue", Arial, sans-serif; min-height: 100vh; overflow-x: hidden; }
+  .container { position: relative; z-index: 1; max-width: 880px; margin: 0 auto; padding: 60px 32px 80px; }
+  header { display: flex; align-items: center; gap: 16px; margin-bottom: 52px; animation: fadeDown 0.6s ease both; }
+  .logo { width: 48px; height: 48px; border-radius: 14px; background: var(--accent); display: flex; align-items: center; justify-content: center; font-size: 22px; flex-shrink: 0; box-shadow: 0 4px 20px rgba(140,79,43,0.25); }
+  .header-text h1 { font-size: 22px; font-weight: 700; color: var(--text); letter-spacing: -0.3px; }
+  .header-meta { display: flex; gap: 8px; margin-top: 6px; flex-wrap: wrap; align-items: center; }
+  .badge { display: inline-block; padding: 3px 10px; border-radius: 20px; font-size: 11px; letter-spacing: 0.3px; }
+  .badge-date { background: var(--accent-soft); border: 1px solid var(--line); color: var(--accent); }
+  .badge-count { background: rgba(140,79,43,0.06); border: 1px solid var(--line); color: var(--muted); }
+  .badge-source { background: transparent; color: var(--muted); font-size: 11px; padding: 0 4px; }
+  .summary-card { background: var(--card-bg); border: 1px solid var(--line); border-radius: 24px; padding: 28px 32px; margin-bottom: 32px; box-shadow: 0 20px 60px rgba(61,36,15,0.06); animation: fadeUp 0.5s ease 0.1s both; }
+  .summary-card h2 { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.6px; color: var(--accent); margin-bottom: 16px; }
+  .summary-text { font-size: 15px; line-height: 1.8; color: var(--text); }
+  .section { margin-bottom: 36px; animation: fadeUp 0.5s ease both; }
+  .section-title { display: flex; align-items: center; gap: 10px; font-size: 17px; font-weight: 700; color: var(--text); margin-bottom: 16px; padding-bottom: 12px; border-bottom: 1px solid var(--line); }
+  .section-icon { width: 28px; height: 28px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 14px; flex-shrink: 0; background: var(--accent-soft); }
+  .news-card { background: var(--card-bg); border: 1px solid var(--line); border-radius: 24px; padding: 22px 26px; margin-bottom: 12px; box-shadow: 0 8px 30px rgba(61,36,15,0.04); transition: background 0.2s, border-color 0.2s, transform 0.2s; }
+  .news-card:hover { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(61,36,15,0.08); }
+  .news-card.featured { border-left: 3px solid var(--accent); }
+  .news-card.featured:hover { border-color: var(--accent); }
+  .card-header { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; }
+  .rank-badge { background: var(--accent); color: #fff7f0; font-weight: 700; font-size: 12px; padding: 2px 8px; border-radius: 6px; }
+  .emoji-icon { font-size: 18px; }
+  .card-header-row { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
+  .emoji-sm { font-size: 14px; }
+  .news-card h3 { font-size: 15px; font-weight: 600; color: var(--text); margin-bottom: 8px; line-height: 1.5; }
+  .journal-source { font-size: 12px; color: var(--accent); margin-bottom: 8px; opacity: 0.8; }
+  .news-card p { font-size: 13.5px; line-height: 1.75; color: var(--muted); }
+  .card-footer { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+  .tag { padding: 2px 9px; background: var(--accent-soft); border-radius: 999px; font-size: 11px; color: var(--accent); }
+  .news-card a { font-size: 12px; color: var(--accent); text-decoration: none; opacity: 0.7; margin-left: auto; }
+  .news-card a:hover { opacity: 1; }
+  .utility-high { color: #5a7a3a; font-size: 11px; font-weight: 600; padding: 2px 8px; background: rgba(90,122,58,0.1); border-radius: 4px; }
+  .utility-mid { color: #9f7a2e; font-size: 11px; font-weight: 600; padding: 2px 8px; background: rgba(159,122,46,0.1); border-radius: 4px; }
+  .utility-low { color: var(--muted); font-size: 11px; font-weight: 600; padding: 2px 8px; background: rgba(118,100,83,0.08); border-radius: 4px; }
+  .utility-sm { font-size: 10px; }
+  .keywords-section { margin-bottom: 36px; }
+  .keywords { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+  .keyword { padding: 5px 14px; background: var(--accent-soft); border: 1px solid var(--line); border-radius: 20px; font-size: 12px; color: var(--accent); cursor: default; transition: background 0.2s; }
+  .keyword:hover { background: rgba(140,79,43,0.18); }
+  .topic-section { margin-bottom: 36px; }
+  .topic-row { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+  .topic-name { font-size: 13px; color: var(--muted); width: 100px; flex-shrink: 0; text-align: right; }
+  .topic-bar-bg { flex: 1; height: 8px; background: var(--line); border-radius: 4px; overflow: hidden; }
+  .topic-bar { height: 100%; background: linear-gradient(90deg, var(--accent), #c47a4a); border-radius: 4px; transition: width 0.6s ease; }
+  .topic-count { font-size: 12px; color: var(--accent); width: 24px; }
+  .links-section { margin-top: 48px; display: flex; flex-direction: column; gap: 12px; animation: fadeUp 0.5s ease 0.4s both; }
+  .link-card { display: flex; align-items: center; gap: 14px; padding: 18px 24px; background: var(--card-bg); border: 1px solid var(--line); border-radius: 24px; text-decoration: none; color: var(--text); transition: all 0.2s; box-shadow: 0 8px 30px rgba(61,36,15,0.04); }
+  .link-card:hover { border-color: var(--accent); transform: translateY(-2px); box-shadow: 0 12px 40px rgba(61,36,15,0.08); }
+  .link-icon { font-size: 28px; flex-shrink: 0; }
+  .link-text { flex: 1; }
+  .link-title { font-size: 15px; font-weight: 700; color: var(--text); }
+  .link-desc { font-size: 12px; color: var(--muted); margin-top: 2px; }
+  .link-arrow { font-size: 18px; color: var(--accent); font-weight: 700; }
+  footer { margin-top: 32px; padding-top: 22px; border-top: 1px solid var(--line); font-size: 11.5px; color: var(--muted); display: flex; justify-content: space-between; animation: fadeUp 0.5s ease 0.5s both; }
+  footer a { color: var(--muted); text-decoration: none; }
+  footer a:hover { color: var(--accent); }
+  @keyframes fadeDown { from { opacity: 0; transform: translateY(-16px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+  @media (max-width: 600px) { .container { padding: 36px 18px 60px; } .summary-card, .news-card { padding: 20px 18px; } footer { flex-direction: column; gap: 6px; text-align: center; } .topic-name { width: 70px; font-size: 11px; } .links-section { gap: 8px; } .link-card { padding: 14px 18px; } }
+</style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <div class="logo">🎮</div>
+    <div class="header-text">
+      <h1>Gaming Disorder Research &middot; 遊戲障礙研究文獻日報</h1>
+      <div class="header-meta">
+        <span class="badge badge-date">📅 2026年7月30日</span>
+        <span class="badge badge-count">📊 24 篇文獻</span>
+        <span class="badge badge-source">Powered by PubMed + NVIDIA AI</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="summary-card">
+    <h2>📋 今日文獻趨勢</h2>
+    <p class="summary-text">今日文獻聚焦於遊戲障礙的心理機制與共病，尤其強調焦慮、抑鬱與情緒調節障礙的雙向關係，並呈現神經影像學與縱向研究成為主流趨勢，電子競技與電競參與之健康影響亦受關注。</p>
+  </div>
+
+  <div class="section"><div class="section-title"><span class="section-icon">⭐</span>今日精選 TOP Picks</div>
+        <div class="news-card featured">
+          <div class="card-header">
+            <span class="rank-badge">#1</span>
+            <span class="emoji-icon">⚖️</span>
+            <span class="utility-high">高實用性</span>
+          </div>
+          <h3>性別特異 temporal symptom 網路在遊戲障礙-憂鬱症共病中的縱向驗證：基於 I-PACE 模型的驗證</h3>
+          <p class="journal-source">Addictive behaviors &middot; Sex-specific temporal symptom networks in gaming disorder - depression comorbidity: longitudinal validation of the I-PACE model.</p>
+          <p>透過跨遲滯面板網路分析驗證，發現遊戲障礙與憂鬱症在症狀層級具有雙向預測關係，且男女在橋樑症狀（如精神運動激盪與時間隱瞞）上呈顯著差異，支持性別特化介入策略。</p>
+          <div class="card-footer">
+            <span class="tag">遊戲障礙診斷</span><span class="tag">共病</span><span class="tag">憂鬱症</span><span class="tag">神經科學</span><span class="tag">跨文化研究</span><span class="tag">青少年心理健康</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/[object Object]/" target="_blank">閱讀原文 &rarr;</a>
+          </div>
+        </div>
+        <div class="news-card featured">
+          <div class="card-header">
+            <span class="rank-badge">#2</span>
+            <span class="emoji-icon">👨‍👩‍👧‍👦</span>
+            <span class="utility-high">高實用性</span>
+          </div>
+          <h3>遊戲障礙症狀與父母拒絕、學校參與之間的縱向關聯：解構個人內與個人間效應</h3>
+          <p class="journal-source">Addictive behaviors &middot; Longitudinal associations between parental rejection, school engagement and gaming disorder symptoms among Chinese adolescents: Disentangling between- and within-person effects.</p>
+          <p>採用 Random Intercept Cross-Lagged Panel Model 發現，在個人內層面，父母拒絕直接預測後續遊戲障礙症狀增加，而遊戲障礙症狀則透過降低學校參與間接預測父母拒絕增長，揭示動態迴圈機制。</p>
+          <div class="card-footer">
+            <span class="tag">遊戲障礙診斷</span><span class="tag">家庭治療</span><span class="tag">青少年心理健康</span><span class="tag">社會心理因素</span><span class="tag">系統性回顧</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/[object Object]/" target="_blank">閱讀原文 &rarr;</a>
+          </div>
+        </div>
+        <div class="news-card featured">
+          <div class="card-header">
+            <span class="rank-badge">#3</span>
+            <span class="emoji-icon">😰</span>
+            <span class="utility-high">高實用性</span>
+          </div>
+          <h3>錯失恐懼（FoMO）、孤獨、憂鬱與網路遊戲成癮的縱向調節中介模型</h3>
+          <p class="journal-source">Psychology, health &amp; medicine &middot; A longitudinal moderated mediation model of fear of missing out, loneliness, depression, and internet gaming addiction.</p>
+          <p>三波長縱向研究證實 FoMO 透過提升孤獨與憂鬱來預測後續網路遊戲成癮增加，兩者共同中介 57.14% 的總效應，性別無調節作用。</p>
+          <div class="card-footer">
+            <span class="tag">遊戲障礙診斷</span><span class="tag">憂鬱症</span><span class="tag">焦慮症</span><span class="tag">心理治療</span><span class="tag">認知行為治療</span><span class="tag">青少年心理健康</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/[object Object]/" target="_blank">閱讀原文 &rarr;</a>
+          </div>
+        </div>
+        <div class="news-card featured">
+          <div class="card-header">
+            <span class="rank-badge">#4</span>
+            <span class="emoji-icon">🎮</span>
+            <span class="utility-mid">中實用性</span>
+          </div>
+          <h3>電競參與與健康關聯的系統性評論與 Meta 分析：揭示憂鬱降低但久坐行為增加的雙重關聯</h3>
+          <p class="journal-source">Sports medicine - open &middot; Association Between Esports Participation and Health: A Systematic Review and Meta-analysis.</p>
+          <p>經敏感度分析後，電競參與者顯著較低憂鬱水準（SMD -0.13），但非職業電競選手體脂率顯著升高；電競參與與久坐行為、BMI 及遊戲障礙呈正相關。</p>
+          <div class="card-footer">
+            <span class="tag">電子競技</span><span class="tag">遊戲障礙診斷</span><span class="tag">篩檢工具</span><span class="tag">公共衛生政策</span><span class="tag">系統性回顧</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/[object Object]/" target="_blank">閱讀原文 &rarr;</a>
+          </div>
+        </div>
+        <div class="news-card featured">
+          <div class="card-header">
+            <span class="rank-badge">#5</span>
+            <span class="emoji-icon">😴</span>
+            <span class="utility-high">高實用性</span>
+          </div>
+          <h3>網路遊戲障礙與睡眠問題的雙向關聯：韌性與情緒問題的性別中介機制</h3>
+          <p class="journal-source">Journal of psychiatric research &middot; Beyond comorbidity: bidirectional association between sleep problems and internet gaming disorder and the mediating role of resilience and emotional problems: a three-wave cohort study among Chinese adolescents.</p>
+          <p>睡眠問題與網路遊戲障礙具有顯著雙向縱向預測關係；睡眠問題透過情緒問題（僅在男生）及韌性（僅在女生）間接影響後續遊戲障礙症狀，揭示性別特化路徑。</p>
+          <div class="card-footer">
+            <span class="tag">睡眠障礙</span><span class="tag">韌性</span><span class="tag">情緒問題</span><span class="tag">遊戲障礙診斷</span><span class="tag">青少年心理健康</span><span class="tag">神經科學</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/[object Object]/" target="_blank">閱讀原文 &rarr;</a>
+          </div>
+        </div></div>
+
+  <div class="section"><div class="section-title"><span class="section-icon">📚</span>其他值得關注的文獻</div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="emoji-sm">🔗</span>
+            <span class="utility-mid utility-sm">中</span>
+          </div>
+          <h3>網路遊戲障礙、憂鬱與情緒調節失調的動態關聯：中國青少年的跨遲滯面板網路分析</h3>
+          <p class="journal-source">Addictive behaviors</p>
+          <p>發現「憂鬱影響」為網路遊戲障礙、憂鬱與情緒調節失調網路中的核心橋樑症狀，並證實多種症狀間存在自我強化迴圈（如身體遲滯活動與無法控制），強調需針對核心症狀進行干預。</p>
+          <div class="card-footer">
+            <span class="tag">憂鬱症</span><span class="tag">情緒調節失調</span><span class="tag">網路遊戲障礙</span><span class="tag">神經科學</span><span class="tag">青少年心理健康</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/[object Object]/" target="_blank">PubMed &rarr;</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="emoji-sm">🎲</span>
+            <span class="utility-mid utility-sm">中</span>
+          </div>
+          <h3>網路遊戲障礙中藉由社會獎賞影響風險決策：個體在遊戲相關與真實生活社會獎賞下皆表現更高風險偏好</h3>
+          <p class="journal-source">Journal of behavior therapy and experimental psychiatry</p>
+          <p>網路遊戲障礙個體在遊戲相關及真實生活社會獎賞下皆顯著高於健康對照組的風險偏好，且其在遊戲相關獎賞下的風險決策與 IGD-20 評分正相關，真實生活獎賞則負相關。</p>
+          <div class="card-footer">
+            <span class="tag">衝動控制</span><span class="tag">獎賞迴路</span><span class="tag">網路遊戲障礙</span><span class="tag">認知行為治療</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/[object Object]/" target="_blank">PubMed &rarr;</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="emoji-sm">⚡</span>
+            <span class="utility-mid utility-sm">中</span>
+          </div>
+          <h3>網路遊戲障礙個體於慣性與特質衝動控制的神經表徵：靜態功能連結預測特質衝動</h3>
+          <p class="journal-source">Molecular psychiatry</p>
+          <p>證實狀態衝動（輸注行為）之神經活動（右中前frontal gyrus 等區域）不僅區分高風險個體，其靜態功能連結進一步預測特質衝動，並以此為媒介闡釋網路遊戲障礙對衝動的影響。</p>
+          <div class="card-footer">
+            <span class="tag">衝動控制</span><span class="tag">神經影像學</span><span class="tag">獎賞迴路</span><span class="tag">前額葉功能</span><span class="tag">網路遊戲障礙</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/[object Object]/" target="_blank">PubMed &rarr;</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="emoji-sm">🌪️</span>
+            <span class="utility-mid utility-sm">中</span>
+          </div>
+          <h3>災難暴露青少年之創後壓力症狀、無法容忍不確定性與網路遊戲障礙症狀的縱向關聯：無法容忍不確定性為關鍵中介機制</h3>
+          <p class="journal-source">Addictive behaviors</p>
+          <p>創後壓力症狀預測後續網路遊戲障礙症狀增加，且此關係透過增加無法容忍不確定性（IU）部分中介；反之，早期 IU 亦透過後續 PTSS 預測遊戲障礙增加，證實 IU 為創傷與遊戲障礙之雙向轉診斷因子。</p>
+          <div class="card-footer">
+            <span class="tag">創傷後壓力症候群</span><span class="tag">焦慮症</span><span class="tag">網路遊戲障礙</span><span class="tag">青少年心理健康</span><span class="tag">社會心理因素</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/[object Object]/" target="_blank">PubMed &rarr;</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="emoji-sm">🎭</span>
+            <span class="utility-mid utility-sm">中</span>
+          </div>
+          <h3>機器學習與路徑分析揭示青少年網路遊戲障礙之關鍵風險因素：虛擬角色同一性與角色依附為新興預測變項</h3>
+          <p class="journal-source">Journal of affective disorders</p>
+          <p>透過機器學習篩選出渴望、虛擬角色同一性、角色依附與自我同一性為頂級風險因素，且路徑分析證實虛擬角色同一性與角色依附為核心中介路徑（佔總效應 57.8%），凸顯虛擬身份建構在成癮發展中的角色。</p>
+          <div class="card-footer">
+            <span class="tag">風險因素</span><span class="tag">機器學習</span><span class="tag">網路遊戲障礙</span><span class="tag">青少年心理健康</span><span class="tag">認知行為治療</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/[object Object]/" target="_blank">PubMed &rarr;</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="emoji-sm">😤</span>
+            <span class="utility-mid utility-sm">中</span>
+          </div>
+          <h3>網路遊戲障礙中與挫折相關的認知、動機與自我調節失調：挫折 intolerance、非獎賞反應與拖延的共同作用</h3>
+          <p class="journal-source">Addictive behaviors</p>
+          <p>網路遊戲障礙群體顯著高於對照組在挫折 intolerance、frustrative non-reward 與拖延三個維度；三者互相關聯並共同預測診斷與嚴重程度，其中情感 intolerance 與時間管理不佳與核心成癮症狀最相關。</p>
+          <div class="card-footer">
+            <span class="tag">挫折控制</span><span class="tag">拖延</span><span class="tag">非獎賞敏感性</span><span class="tag">網路遊戲障礙</span><span class="tag">認知行為治療</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/[object Object]/" target="_blank">PubMed &rarr;</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="emoji-sm">🛡️</span>
+            <span class="utility-mid utility-sm">中</span>
+          </div>
+          <h3>情緒調節形調節青少年對父母衝突與同儕霸凌的感知如何影響網路遊戲障礙風險：高認知重評低抑制為保護性檔案</h3>
+          <p class="journal-source">Addictive behaviors</p>
+          <p>具高認知重評低表情抑制情緒調節形態的青少年報告最低網路遊戲障礙分數、父母衝突與同儕霸凌感受；反之，其他形態下父母衝突與霸凌對 IGD 的風險影響顯著增強，強調情緒調節能力為關鍵緩衝因素。</p>
+          <div class="card-footer">
+            <span class="tag">情緒調節</span><span class="tag">家庭治療</span><span class="tag">學校心理健康</span><span class="tag">網路遊戲障礙</span><span class="tag">青少年心理健康</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/[object Object]/" target="_blank">PubMed &rarr;</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="emoji-sm">🧠</span>
+            <span class="utility-mid utility-sm">中</span>
+          </div>
+          <h3>網路遊戲障礙個體於贏得與失去反饋期間之有效連結改變：額葉前部抑制功能減退與臨床嚴重度相關</h3>
+          <p class="journal-source">Brain research bulletin</p>
+          <p>網路遊戲障礙個體顯示額葉內部（SFGdor_R）對下額葉（IFGopercular_L, IFGorb_L）及島葉（INS_R）的抑制性有效連結減弱，且 IFGorb_L 的自我抑制連結與 IAT 嚴重度正相關，支持頂端調節功能減退為核心神經機制。</p>
+          <div class="card-footer">
+            <span class="tag">神經影像學</span><span class="tag">前額葉功能</span><span class="tag">網路遊戲障礙</span><span class="tag">治療介入</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/[object Object]/" target="_blank">PubMed &rarr;</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="emoji-sm">📊</span>
+            <span class="utility-low utility-sm">低</span>
+          </div>
+          <h3>電腦腦波圖在成癮線索反應性研究中的系統性評論與 Meta 分析（第一部分：ERP）：證實成癮個體對目標線索具有增強的神經反應性</h3>
+          <p class="journal-source">Neuroscience and biobehavioral reviews</p>
+          <p>Meta 分析證實成癮行為個體在處理成癮相關目標線索時呈現較高的 LPP 振幅（大效應 g=0.955），且在成癮群內部目標線索亦 eliciting 中等效應 LPP，支持 ERP 為成癮神經標記之價值，但強調需標準化設計以提升可比性。</p>
+          <div class="card-footer">
+            <span class="tag">神經影像學</span><span class="tag">篩檢工具</span><span class="tag">系統性回顧</span><span class="tag">成癮機制</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/[object Object]/" target="_blank">PubMed &rarr;</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="emoji-sm">🇫🇷</span>
+            <span class="utility-low utility-sm">低</span>
+          </div>
+          <h3>法語版線上賭博障礙問卷（OGD-Q）之驗證：基於 DSM-5 與 ICD-11 的工具在法語人口中展現良好心理測量特性</h3>
+          <p class="journal-source">L'Encephale</p>
+          <p>法語版 OGD-Q 示 excellent 內部一致性（Cronbach's α=0.856，McDonald's ω=0.884），且 CFA 證實其單一結構，與 IGD-20 及負向情緒顯著相關，適合法語使用者之線上賭博障礙評估。</p>
+          <div class="card-footer">
+            <span class="tag">篩檢工具</span><span class="tag">共病</span><span class="tag">系統性回顧</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/[object Object]/" target="_blank">PubMed &rarr;</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="emoji-sm">💊</span>
+            <span class="utility-mid utility-sm">中</span>
+          </div>
+          <h3>網路行為成癮之藥物治療系統性評論：安非他酮、SSRI 及阿片受體拮抗劑為最常研究且具初步療效</h3>
+          <p class="journal-source">Future science OA</p>
+          <p>系統性評論納入 20 預研究顯示，安非他酮、選擇性5-羥色胺再攝取抑制劑（SSRI）及阿片受體拮抗劑在減輕網路行為成癮症狀方面具初步療效，但證據基礎受限於樣本小、RCT 少及追蹤短。</p>
+          <div class="card-footer">
+            <span class="tag">藥物治療</span><span class="tag">治療介入</span><span class="tag">系統性回顧</span><span class="tag">網路遊戲障礙</span><span class="tag">成癮機制</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/[object Object]/" target="_blank">PubMed &rarr;</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="emoji-sm">📈</span>
+            <span class="utility-high utility-sm">高</span>
+          </div>
+          <h3>青少年網路遊戲障礙症狀與心理病理之縱向關聯：基於 ABCD 研究的神經軌跡證獎賞處理從低激活轉為過度激活，且焦慮與 ADHD 調節右島葉關聯</h3>
+          <p class="journal-source">NeuroImage</p>
+          <p>在控制心理病理後，網路遊戲障礙症狀與獎賞/損失激活在雙側杏仁核、島葉、vmPFC、尾狀核、殼狀核及前 cingulate 皮質中存在雙向關聯；發現獎處理從 11-12 歲低激活轉為 13-14 歲過度激活，且焦慮與 ADHD 顯著增強右島葉激活與症狀之關聯。</p>
+          <div class="card-footer">
+            <span class="tag">神經影像學</span><span class="tag">獎賞迴路</span><span class="tag">焦慮症</span><span class="tag">ADHD</span><span class="tag">網路遊戲障礙</span><span class="tag">縱向研究</span><span class="tag">青少年心理健康</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/[object Object]/" target="_blank">PubMed &rarr;</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="emoji-sm">🥽</span>
+            <span class="utility-mid utility-sm">中</span>
+          </div>
+          <h3>虛擬與擴增實境在預防與治療賭博障礙與遊戲障礙之系統性評論：沉浸式技術顯著減少渴望與焦慮，改善自我調節</h3>
+          <p class="journal-source">Journal of psychiatric research</p>
+          <p>沉浸式技術（VR/AR）在遊戲障礙中顯著減少症狀嚴重度、遊戲時間與負面情緒，同時改善體力活動與應對技巧；在賭博障礙中減少渴望與焦慮，促進負責任賭博，證明其具治療與預防潛力。</p>
+          <div class="card-footer">
+            <span class="tag">虛擬實境</span><span class="tag">擴增實境</span><span class="tag">治療介入</span><span class="tag">預防方案</span><span class="tag">網路遊戲障礙</span><span class="tag">賭博障礙</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/[object Object]/" target="_blank">PubMed &rarr;</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="emoji-sm">🧠</span>
+            <span class="utility-mid utility-sm">中</span>
+          </div>
+          <h3>網路遊戲障礙中賞賛學習與消滅之神經相關：問題玩家對非成瘾相關獎賞敏感度降低，且在消滅階段顯示異常杏仁核激活</h3>
+          <p class="journal-source">Behavioural brain research</p>
+          <p>問題遊戲使用者及網路遊戲障礙群體在學習色情與金錢獎賞時，尾狀核與 vmPFC/vACC 活動顯著低於非問題使用者；在消滅階段，風險玩家顯示 dACC 活動增加，而障礙群體在遊戲刺激下杏仁核激活顯著升高，提示獎賞處理與消滅過程之異常。</p>
+          <div class="card-footer">
+            <span class="tag">神經影像學</span><span class="tag">獎賞迴路</span><span class="tag">網路遊戲障礙</span><span class="tag">成癮機制</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/[object Object]/" target="_blank">PubMed &rarr;</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="emoji-sm">🧘</span>
+            <span class="utility-mid utility-sm">中</span>
+          </div>
+          <h3>青少年網路遊戲障礙與心理需求不滿之關聯：EPOCH 福祉與韌性作為中介機制</h3>
+          <p class="journal-source">Acta psychologica</p>
+          <p>心理需求不滿顯著預測問題數位遊戲增加，且此關係透過 EPOCH 福祉與韌性兩者部分中介，支持自我決定理論在青少年數位遊戲成癮中的適用性，但為橫斷面設計，因果性有限。</p>
+          <div class="card-footer">
+            <span class="tag">自我決定理論</span><span class="tag">韌性</span><span class="tag">福祉</span><span class="tag">網路遊戲障礙</span><span class="tag">青少年心理健康</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/[object Object]/" target="_blank">PubMed &rarr;</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="emoji-sm">🎁</span>
+            <span class="utility-mid utility-sm">中</span>
+          </div>
+          <h3>青少年loot box參與之行為機制與問題結果系統性評論：提出四條理論路徑解釋其與賭博、遊戲及社會規範之關聯</h3>
+          <p class="journal-source">Addictive behaviors</p>
+          <p>系統性評論 26 項經驗研究，透過 S-O-R 模型闡述 loot box 參與如何透過認知偏差、習慣與社會規範影響青少年行為，並提出四條理論路徑（如遊戲-loot box-賭博融合路徑）以解釋其問題結果。</p>
+          <div class="card-footer">
+            <span class="tag">戰利品箱</span><span class="tag">微交易</span><span class="tag">系統性回顧</span><span class="tag">青少年心理健康</span><span class="tag">成癮機制</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/[object Object]/" target="_blank">PubMed &rarr;</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="emoji-sm">⚖️</span>
+            <span class="utility-mid utility-sm">中</span>
+          </div>
+          <h3>網路遊戲障礙之共病機制：基於 I-PACE 模型之雙重途徑模型——尋求快樂與尋求補償在問題社交網路使用中的分離作用</h3>
+          <p class="journal-source">Addictive behaviors reports</p>
+          <p>問題社交網路使用之發展涉及兩條強化途徑：尋求快樂（正向強化）增加使用時間，尋求補償（負向強化）增加症狀嚴重度；壓力評量與應對策略透過負向強化影響症狀，而動機則透過兩條路徑共同影響行為。</p>
+          <div class="card-footer">
+            <span class="tag">成癮機制</span><span class="tag">強化機制</span><span class="tag">壓力</span><span class="tag">應對</span><span class="tag">網路遊戲障礙</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/[object Object]/" target="_blank">PubMed &rarr;</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="emoji-sm">🎮</span>
+            <span class="utility-mid utility-sm">中</span>
+          </div>
+          <h3>電子競技參與與健康關聯的系統性評論與 Meta 分析：揭示憂鬱降低但久坐行為增加的雙重關聯</h3>
+          <p class="journal-source">Sports medicine - open</p>
+          <p>經敏感度分析後，電競參與者顯著較低憂鬱水準（SMD -0.13），但非職業電競選手體脂率顯著升高；電競參與與久坐行為、BMI 及遊戲障礙呈正相關。</p>
+          <div class="card-footer">
+            <span class="tag">電子競技</span><span class="tag">遊戲障礙診斷</span><span class="tag">篩檢工具</span><span class="tag">公共衛生政策</span><span class="tag">系統性回顧</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/[object Object]/" target="_blank">PubMed &rarr;</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="emoji-sm">📈</span>
+            <span class="utility-high utility-sm">高</span>
+          </div>
+          <h3>青少年網路遊戲障礙症狀與心理病理之縱向關聯：基於 ABCD 研究的神經軌跡證獎賞處理從低激活轉為過度激活，且焦慮與 ADHD 調節右島葉關聯</h3>
+          <p class="journal-source">NeuroImage</p>
+          <p>在控制心理病理後，網路遊戲障礙症狀與獎賞/損失激活在雙側杏仁核、島葉、vmPFC、尾狀核、殼狀核及前 cingulate 皮質中存在雙向關聯；發現獎處理從 11-12 歲低激活轉為 13-14 歲過度激活，且焦慮與 ADHD 顯著增強右島葉激活與症狀之關聯。</p>
+          <div class="card-footer">
+            <span class="tag">神經影像學</span><span class="tag">獎賞迴路</span><span class="tag">焦慮症</span><span class="tag">ADHD</span><span class="tag">網路遊戲障礙</span><span class="tag">縱向研究</span><span class="tag">青少年心理健康</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/[object Object]/" target="_blank">PubMed &rarr;</a>
+          </div>
+        </div></div>
+
+  <div class="topic-section section"><div class="section-title"><span class="section-icon">📊</span>主題分佈</div>
+            <div class="topic-row">
+              <span class="topic-name">網路遊戲障礙</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:100%"></div></div>
+              <span class="topic-count">22</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">神經影像學</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:36%"></div></div>
+              <span class="topic-count">8</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">青少年心理健康</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:86%"></div></div>
+              <span class="topic-count">19</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">成癮機制</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:68%"></div></div>
+              <span class="topic-count">15</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">憂鬱症</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:55%"></div></div>
+              <span class="topic-count">12</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">焦慮症</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:36%"></div></div>
+              <span class="topic-count">8</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">系統性回顧</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:45%"></div></div>
+              <span class="topic-count">10</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">治療介入</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:41%"></div></div>
+              <span class="topic-count">9</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">篩檢工具</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:27%"></div></div>
+              <span class="topic-count">6</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">共病</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:32%"></div></div>
+              <span class="topic-count">7</span>
+            </div></div>
+
+  <div class="keywords-section section"><div class="section-title"><span class="section-icon">🏷️</span>關鍵字</div><div class="keywords"><span class="keyword">網路遊戲障礙</span><span class="keyword">憂鬱症</span><span class="keyword">焦慮症</span><span class="keyword">神經影像學</span><span class="keyword">青少年心理健康</span><span class="keyword">成癮機制</span><span class="keyword">系統性回顧</span><span class="keyword">治療介入</span><span class="keyword">篩檢工具</span><span class="keyword">共病</span></div></div>
+
+  <div class="links-section">
+    <a href="https://www.leepsyclinic.com/" class="link-card" target="_blank">
+      <span class="link-icon">🏥</span>
+      <span class="link-text">
+        <span class="link-title">李政洋身心診所首頁</span>
+        <span class="link-desc">專業身心科醫療服務</span>
+      </span>
+      <span class="link-arrow">&rarr;</span>
+    </a>
+    <a href="https://blog.leepsyclinic.com/" class="link-card" target="_blank">
+      <span class="link-icon">📬</span>
+      <span class="link-text">
+        <span class="link-title">訂閱電子報</span>
+        <span class="link-desc">李政洋身心診所部落格</span>
+      </span>
+      <span class="link-arrow">&rarr;</span>
+    </a>
+    <a href="https://buymeacoffee.com/CYlee" class="link-card" target="_blank">
+      <span class="link-icon">☕</span>
+      <span class="link-text">
+        <span class="link-title">Buy Me a Coffee</span>
+        <span class="link-desc">支持本研究日報持續運作</span>
+      </span>
+      <span class="link-arrow">&rarr;</span>
+    </a>
+  </div>
+
+  <footer>
+    <span>資料來源：PubMed &middot; 分析模型：nvidia/nemotron-3-super-120b-a12b</span>
+    <span><a href="https://github.com/u8901006/gaming-disorder">GitHub</a></span>
+  </footer>
+</div>
+</body>
+</html>
