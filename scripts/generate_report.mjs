@@ -10,7 +10,7 @@ const SUMMARIZED_PATH = resolve(ROOT, "docs", ".summarized_cache.json");
 const API_BASE =
   process.env.NVIDIA_API_BASE || "https://integrate.api.nvidia.com/v1";
 const FALLBACK_MODELS = [
-  process.env.NVIDIA_MODEL || "nvidia/nemotron-3-super-120b-a12b",
+  process.env.NVIDIA_MODEL || "nvidia/nemotron-3-ultra-550b-a55b",
 ];
 
 const SYSTEM_PROMPT = `你是遊戲障礙（Gaming Disorder）領域的資深研究員與科學傳播者。你的任務是：
