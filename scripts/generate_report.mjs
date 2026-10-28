@@ -175,7 +175,7 @@ ${papersText}
           temperature: 1.0,
           top_p: 0.95,
           max_tokens: 16384,
-          reasoning_effort: "none",
+          chat_template_kwargs: { enable_thinking: false },
         };
         const data = await callNvidiaAPI(apiKey, model, payload);
         const text = data.choices?.[0]?.message?.content?.trim() || "";
